@@ -1,10 +1,10 @@
-﻿// ==UserScript== 
+// ==UserScript== 
 // @name          BH IMDB/Word Highlight
 // @namespace     http://userscripts.org/users/55201
 // @description   Kiemeli (1) az IMDB ertekeleseket, ill. (2) a megadott szavakat. Tamogatott oldalak: BH, nCore.
 // @date          2008.06.08. (yyyy.mm.dd)
-// @update        2013.05.20. (yyyy.mm.dd)
-// @version       0.2.2
+// @update        2015.11.29. (yyyy.mm.dd)
+// @version       0.2.3
 // @author        Jabba Laci (jabba.laci@gmail.com)
 // @include       http*://bithumen*/browse.php*
 // @include       http*://ncore*/torrents.php*
@@ -68,7 +68,8 @@
                {
                   hl = document.createElement('span');
                   hl.className = imdbClass;
-                  hl.style['backgroundColor'] = ratingColorArray[rating];
+                  hl.style.backgroundColor = ratingColorArray[rating];
+                  hl.style.color = 'black';
                   hl.appendChild( document.createTextNode(imdb) );
                   //
                   node.parentNode.insertBefore( document.createTextNode(before), node );
@@ -88,7 +89,8 @@
                //
                hl = document.createElement('span');
                hl.className = hlClass;
-               hl.style['backgroundColor'] = wordsColor;
+               hl.style.backgroundColor = wordsColor;
+               hl.style.color = 'black';
                hl.appendChild( document.createTextNode(word) );
                //
                node.parentNode.insertBefore( document.createTextNode(before), node );
